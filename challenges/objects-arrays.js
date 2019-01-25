@@ -73,7 +73,18 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 /* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
+// const universities = []; 
+const uniAlpha = function(arr){
+  let newArr = [];
+  for(let i = 0; i<arr.length; i++){
+    newArr.push(arr[i].university);
+  }
+  return newArr.sort();
+};
+
+const universities= uniAlpha(graduates);
+console.log(uniAlpha(graduates));
+
 console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
@@ -82,7 +93,16 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
-const contactInfo = [];
+
+const nameEmail = function(arr){
+  let newArr = [];
+  for(let i = 0; i< arr.length; i++){
+    newArr.push(`${arr[i].first_name} ${arr[i].email}`);
+  }
+  return newArr;
+}
+
+const contactInfo = nameEmail(graduates)
 console.log(contactInfo);
 
 
@@ -112,7 +132,10 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const animalNames = [];
+// const animalNames = zooAnimals.forEach( (animal) => { `${animal.animal_name} ${animal.scientific_name}`;});
+const animalNames = zooAnimals.forEach(animal => {
+  return animal.animal_name;
+});
 console.log(animalNames);
 
 /* Request 2: .map()    
